@@ -1,6 +1,9 @@
 export const colors = {
-    blue: '#4F63AC',
-    white: '#FFFFFF',
-    orange: '#FCA34D',
-    black: '#000000',
+    blue: "#4F63AC",
+    white: "#FFFFFF",
+    black: "#000000",
+    lightGray: "#DADADA",
+    grey: "#8D9BB5",
+    orange: "#FCA34D",
+    darkGray: "#3F4A59",
 }
