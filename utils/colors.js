@@ -7,4 +7,5 @@ export const colors = {
     orange: "#FCA34D",
     darkGray: "#3F4A59",
     textGray: "#606060",
+    borderColor: '#707070'
 }
