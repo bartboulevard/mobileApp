@@ -8,7 +8,17 @@ import {
 import Button from "../../../components/Button";
 import { styles } from "./styles";
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+  console.log('navigation => ', navigation)
+
+  const onSignUp = () => {
+    navigation.navigate('Signup')
+  }
+  
+  const onSignIn = () => {
+    navigation.navigate('Signin')
+  }
+
   return (
     <View style={styles.titleContainer}>
         <Image resizeMode="contain" style={styles.image} source={require("../../../assets/splash_image.png")} /> 
@@ -16,9 +26,9 @@ const Splash = () => {
         <Text style={[styles.title, styles.innerTitle]}>All you need </Text> 
         <Text style={styles.title}>Here!</Text>
 
-        <Button title="Sign Up" />
+        <Button onPress={onSignUp} title="Sign Up" />
         
-        <Pressable hitSlop={20}>
+        <Pressable onPress={onSignIn} hitSlop={20}>
             <Text style={styles.footerText}>Sign In</Text>
         </Pressable>
     </View>
