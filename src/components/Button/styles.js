@@ -6,12 +6,8 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.blue,
         paddingVertical: 20,
-        paddingHorizontal: 8,
+        paddingHorizontal: 20,
         borderRadius: 8,
-        flexDirection: 'row',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     title: {
         color: colors.white,
