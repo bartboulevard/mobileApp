@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import {View, Text, TouchableOpacity} from "react-native";
+import {View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView, ActivityIndicator} from "react-native";
 import { styles } from "./styles";
 import {SafeAreaView} from "react-native-safe-area-context";
 import Header from "../../../components/Header";
+import Input from "../../../components/Input";
+import categories from "../../../data/categories";
+import Button from "../../../components/Button";
 
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 
@@ -34,7 +37,7 @@ const onDeleteImage = (image) => {
 }
 
 const onChange = (value, key) => {
-    setValues((val) => ({...v, [key]: value}))
+    setValues((val) => ({...val, [key]: value}))
 }
 
     return (

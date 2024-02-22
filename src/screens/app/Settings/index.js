@@ -1,4 +1,4 @@
-import {React} from "react";
+import {React, useState} from "react";
 import {View, Text, Linking, Image, Pressable} from "react-native";
 import { styles } from "./styles";
 import {SafeAreaView} from "react-native-safe-area-context";
@@ -49,4 +49,4 @@ const Settings = () => {
         </SafeAreaView>
     )
 }
-export default React.memo(Settings);
+export default Settings;
