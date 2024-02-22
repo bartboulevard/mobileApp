@@ -1,32 +1,47 @@
 import React, {useEffect} from "react";
-import { SafeAreaView } from "react-native";
 import {Image} from "react-native";
 
 import Splash from "./src/screens/auth/Splash";
 import Signup from "./src/screens/auth/Signup";
 import SignIn from "./src/screens/auth/SignIn";
 
-import {colors} from "/Users/student/MobileApp/utils/colors.js";
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import Config from "react-native-config";
+import Home from "./src/screens/app/Home";
+import Favorites from "./src/screens/app/Favorites";
+import Profile from "./src/screens/app/Profile";
+import Settings from "./src/screens/app/Settings";
+import CreateListing from "./src/screens/app/CreateListing";
+
+import ProductDetails from "./src/screens/app/ProductDetails";
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Home from "./src/screens/app/Home";
-import Favorites from "./src/screens/app/Favorites";
-import Profile from "./src/screens/app/Profile";
-import ProductDetails from "./src/screens/app/ProductDetails";
-
 import {SafeAreaProvider} from "react-native-safe-area-context";
 
-const WEB_CLIENT_ID = '388285231760-4b4vovvji6vsh8f6iau6gjmjrfet62bv.apps.googleusercontent.com'
-const IOS_CLIENT_ID = '388285231760-vlefouihlusf2121qfq1a5cnilgqfcap.apps.googleusercontent.com'
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
+
+import Config from "react-native-config";
+import {colors} from "/Users/student/MobileApp/utils/colors.js";
+
+
+const WEB_CLIENT_ID = '388285231760-4b4vovvji6vsh8f6iau6gjmjrfet62bv.apps.googleusercontent.com'
+const IOS_CLIENT_ID = '388285231760-vlefouihlusf2121qfq1a5cnilgqfcap.apps.googleusercontent.com'
+
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
+      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}}/>
+      <Stack.Screen name="CreateListing" component={CreateListing} options={{headerShown: false}}/>
+    </Stack.Navigator>
+  );
+};
 
 const Tabs = () => {
   return (
@@ -59,7 +74,7 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Favorites" component={Favorites} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
   );
 }
