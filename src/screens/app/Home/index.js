@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, navigation} from "react";
 import {View, Text, FlatList} from "react-native";
 import { styles } from "./styles";
 import Header from "../../../components/Header";
@@ -7,8 +7,10 @@ import { categories } from "../../../data/categories";
 import {products} from "../../../data/products";
 import CategoryBox from "../../../components/CategoryBox";
 import ProductHomeItem from "../../../components/ProductHomeItem";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+    const navigation = useNavigation()
     const [selectedCategory, setSelectedCategory] = useState()
     const [keyword, setKeyword] = useState()
     const [selectedProducts, setSelectedProducts] = useState(products)
@@ -44,9 +46,12 @@ const Home = () => {
     }
 
     const renderProductItem = ({item}) => {
+        const onProductPress = (product) => {
+            navigation.navigate('ProductDetails', {product})
+        }
         console.log('item => ', item)
         return (
-            <ProductHomeItem {...item}/>
+            <ProductHomeItem onPress={() => onProductPress(item)} {...item}/>
         )
     }
 
