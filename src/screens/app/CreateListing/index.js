@@ -67,4 +67,4 @@ const onChange = (value, key) => {
         </KeyboardAvoidingView>
     )
 }
-export default React.memo(CreateListing);
+export default CreateListing;
