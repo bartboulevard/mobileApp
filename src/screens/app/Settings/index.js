@@ -49,4 +49,4 @@ const Settings = () => {
         </SafeAreaView>
     )
 }
-export default React.memo(Settings);
+export default Settings;

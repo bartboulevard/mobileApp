@@ -14,4 +14,4 @@ const ListItem = ({title, subtitle, onPress}) => {
         </Pressable>
     )
 }
-export default React.memo(ListItem);
+export default ListItem;

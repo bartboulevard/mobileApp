@@ -29,4 +29,4 @@ const ImageCarousel = ({images}) => {
         </View>
     )
 }
-export default React.memo(ImageCarousel);
+export default ImageCarousel;
