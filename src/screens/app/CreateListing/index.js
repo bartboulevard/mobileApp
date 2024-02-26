@@ -6,6 +6,7 @@ import Header from "../../../components/Header";
 import Input from "../../../components/Input";
 import categories from "../../../data/categories";
 import Button from "../../../components/Button";
+import { Image, Pressable } from "react-native";
 
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 
@@ -41,6 +42,7 @@ const onChange = (value, key) => {
 }
 
     return (
+        <SafeAreaView>
         <KeyboardAvoidingView behavior="position">
             <Header showBack={true} onBackPress={goBack} title="Create Listing"/>
             <ScrollView style={styles.container}>
@@ -68,6 +70,7 @@ const onChange = (value, key) => {
                 <Button title="Submit"/>
             </ScrollView>
         </KeyboardAvoidingView>
+        </SafeAreaView>
     )
 }
 export default React.memo(CreateListing);
